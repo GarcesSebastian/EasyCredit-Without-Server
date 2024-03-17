@@ -4,21 +4,161 @@
 <section class="relative top-20 w-screen min-h-full flex flex-col justify-center items-center">
     <article class="w-full flex flex-col justify-center items-center h-[42rem] bg-gradient-to-r to-[#0074D3] from-[#0040A8]">
         <div class="w-full h-full gap-x-5 flex justify-between items-center max-[880px]:flex-col max-w-7xl max-xl:px-5 max-[880px]:justify-center max-[880px]:gap-y-10">
-            <!--CODE NEW GUI -->
+            <!--CODE NEW GUI-->
+            <div class="simulador-container">
+                <!-- Cuadro para Monto -->
+                <div class="input-box top-left">
+                    <label for="monto">Monto del crédito:
+                    </label>
+                    <div class="input-with-icon">
+                        <input type="number" id="monto" name="monto" placeholder="Ingrese el monto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                            <path d="M12 9h.01" /><path d="M11 12h1v4h1" />
+                        </svg>
+                    </div>
+                </div>
+    
+                <!-- Cuadro para Tasa de Interés -->
+                <div class="input-box top-right">
+                    <label for="interes">Tasa de Interés (%): 
+                    </label>
+                    <div class="input-with-icon">
+                        <input type="number" id="monto" name="monto" placeholder="Ingrese el monto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                            <path d="M12 9h.01" /><path d="M11 12h1v4h1" />
+                        </svg>
+                    </div>
+                </div>
+    
+                <!-- Cuadro para Plazo -->
+                <div class="input-box bottom-left">
+                    <label for="plazo">Plazo en meses:
+                    </label>
+
+                    <select id="plazo" name="plazo">
+                        <option value="mensual">Mensual</option>
+                        <option value="quincenal">Quincenal</option>
+                        <option value="semanal">Semanal</option>
+                    </select>
+                </div>
+    
+                <!-- Cuadro para Frecuencia de Pago -->
+                <div class="input-box bottom-right">
+                    <label for="frecuencia">Frecuencia de Pago:</label>
+                    <select id="frecuencia" name="frecuencia">
+                        <option value="mensual">Mensual</option>
+                        <option value="quincenal">Quincenal</option>
+                        <option value="semanal">Semanal</option>
+                    </select>
+                 </div>
+                <!-- Botones de Cálculo -->
+                <div class="calc-buttons">
+                    <button class="calculate-btn">Calcular</button>
+                </div>
+            </div>
         </div>
     </article>
 </section>
 
 <style>
     .container-image{
-        width: 30rem;
-        height: 100%    ;
-        background-image: url("../../public/background/giro.png");
-        background-position:center;
-        background-repeat: no-repeat;
-        background-size:contain;
+    width: 30rem;
+    height: 100%    ;
+    background-image: url("../../public/background/giro.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:contain;
     }
 
+    .simulador-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 800px;
+    margin: 0% auto;
+    margin-bottom: 90px;
+    }
+    .input-with-icon {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+
+.input-with-icon svg {
+    margin-left: 10px;
+}
+
+.input-box input {
+    width: calc(100% - 24px); 
+} 
+.input-box {
+padding: 20px;
+    border-radius: 10px;
+    --tw-shadow-color: #111827;
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    --tw-shadow: var(--tw-shadow-colored);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+     background-color:rgb(30,41,59);
+    }
+
+    input::placeholder{
+    color: rgb(0, 0, 0);
+    }
+    
+    .input-box label {
+     display: block;
+     margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(255, 255, 255)
+    }
+
+    .calc-buttons{
+    width: 100%;
+     display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    margin-top: 20px;
+    grid-column: 1 / span 2; 
+    grid-row: 3; 
+    }
+
+    .calculate-btn {
+    padding: 10px 10px;
+    border: 2px solid rgb(0, 60, 255); 
+    border-radius: 7px; 
+    background-color: blue;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    }
+
+    .calculate-btn:hover{
+    background-color: rgb(255, 210, 11);
+    color: rgb(34, 34, 255);
+    }
+
+    .input-box input,
+    .input-box select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color:rgb(32, 82, 158);  
+    }
+    
+    
+    .input-box {
+    width: 100%;       
+    }
+    
+    
     @media (width > 640px) {
         .list-options li:not(.list-options li:last-child){
             border-right: 2px solid #ccc;
