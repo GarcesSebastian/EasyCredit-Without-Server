@@ -61,10 +61,161 @@
                 </div>
             </div>
 
-            <!--CODE NEW GUI TABLA DE AMORTIZACION -->
-            <div>
-                <!-- Tabla de Amortización -->
-                
+            <div style="width: 95%; overflow-x: auto;"> 
+                <button style="backgraound-color: rgb(0, 0, 60); color: white; border: 2px solid rgb(0, 0, 0,); padding: 10px 20px; border-radius: 5px; cursor: pointer;" id="btnMostrarTabla">Tabla de Amortización</button>
+                <table id="tblAmortizacion" style ="display: none; border-collapse:collapse; width:1200px; border: 3px  solid rgb(0, 0, 60); white-space: nowrap; box-shadow: 0px 0px 10px rgb(0, 16, 52); text-align: center;" >
+                    <colgroup>
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                        <col style="border-right: 0.1px solid rgb(0, 0, 60);">
+                    </colgroup>
+                    <thead>                        
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <th style="background-color: rgb(10, 41, 107);">Añoas</th>
+                            <th style="background-color: rgb(10, 41, 107);">Sdo. Capita</th>
+                            <th style="background-color: rgb(10, 41, 107);">Sdo. Capital</th>
+                            <th style="background-color: rgb(10, 41, 107);">Pago Capital</th>
+                            <th style="background-color: rgb(10, 41, 107);">P. Int.</th>
+                            <th style="background-color: rgb(10, 41, 107);">Monton de Pago</th>
+                            <th style="background-color: rgb(10, 41, 107);">Plazo en Dil</th>
+                            <th style="background-color: rgb(10, 41, 107);">Pago No.</th>
+                            <th style="background-color: rgb(10, 41, 107);">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                        <tr style="border-bottom: 0.1px solid rgb(0, 0, 60);">
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                            <td style="background-color: rgb(10, 55, 210);">"   "</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var btnMostrarTabla = document.getElementById("btnMostrarTabla") as  HTMLButtonElement;
+                        var tabla = document.getElementById("tblAmortizacion") as  HTMLTableElement;
+
+                        btnMostrarTabla.addEventListener("click", function() {
+                            if (tabla.style.display === "none") {
+                                tabla.style.display = "table";
+                            } else {
+                                tabla.style.display = "none";
+                            }
+                        });
+                    });
+                </script>
             </div>
         </div>
     </article>
