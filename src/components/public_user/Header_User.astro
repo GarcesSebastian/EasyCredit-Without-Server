@@ -1,5 +1,6 @@
 ---
 import 'animate.css';
+import Notifications from "../public_user/Notifications.astro";
 
 interface Props{
 [x: string]: any;
@@ -59,11 +60,13 @@ const {href_image, href_signin, href_signup} = Astro.props;
                         <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
                     </svg>
                 </span>
-
             </div>
         </div>
     </div>
+    
 </header>
+<Notifications></Notifications>
+
 
 <style>
     #content-header{
@@ -94,4 +97,7 @@ const {href_image, href_signin, href_signup} = Astro.props;
         }else{
         }
     });
+
+    //funcionalidad de las notificaciones
+
 </script>
