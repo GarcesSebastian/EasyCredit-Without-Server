@@ -35,15 +35,49 @@ import CardMovementsArtcile from "./CardMovementsArticle.astro"
                             </div>
 
                             <!--Tarjeta segundaria que se cambiará -->
+                            <!-- 
                             <div id="card_pays" class="flex col-span-1 row-span-1 justify-center flex-col w-full p-7 rounded-xl cursor-pointer bg-slate-800 shadow-lg shadow-gray-900 transition-all duration-150 ease-in hover:scale-105">
                                 <CardBasic
                                 img_url="https://cdn-icons-png.flaticon.com/512/2769/2769569.png"
                                 balance_text={"120000$"}
                                 available_balance_text={"99990$"}                                
-                                >
-                                </CardBasic>
+                                >    
+                            </div> -->
+                            <div
+                        id="card_pays"
+                        class="flex col-span-1 row-span-1 justify-between flex-col w-full p-6 rounded-xl cursor-pointer bg-slate-800 shadow-lg shadow-gray-900 transition-all duration-150 ease-in"
+                    >
+                        <div
+                            id="contentTarget"
+                            class="flex justify-between mb-1"
+                        >
+                            <img
+                                class="h-14"
+                                src="/ImgStatic/chip.png"
+                                alt="Logo del chip"
+                            />
+                            <img
+                                class="h-12"
+                                src="/ImgStatic/logo.png"
+                                alt="Logo de la Página"
+                            />
+                        </div>
+                        <div id="contentTarget" class="flex flex-col gap-2">
+                            <p class="text-lg">4563 2345 8193 7281</p>
+                            <p class="ml-5">06/04/2024</p>
+                        </div>
+                        <div id="contentTarget" class="p-1">
+                            <h2 class="text-xl font-blod text-right">
+                                Sebaxxt
+                            </h2>
+                        </div>
+                        <div id="back" class="">
+                            <div id="line"></div>
+                            <div id="number">
+                                <h2 class="m-auto">8342</h2>
                             </div>
-
+                        </div>
+                    </div>
                             <div id="welcome" class="flex col-span-3 row-span-1 justify-around flex-col gap-3 gap-x-5 w-full p-7 rounded-xl cursor-pointer bg-slate-800 shadow-lg shadow-gray-900 transition-all duration-150 ease-in hover:scale-105">
                                 <h1 class="text-4xl font-bold text-white">
                                     {"Bienvenido de nuevo "}<span class="text-yellow-500">{"Ladeuth"}</span>!
@@ -82,15 +116,52 @@ import CardMovementsArtcile from "./CardMovementsArticle.astro"
                             </div>
 
                             <!--Esta es la principal que se cambiará -->
-                            <div id="card_pays_principal" class="flex col-span-1 row-span-1 justify-center flex-col w-full p-7 rounded-xl cursor-pointer bg-slate-800 shadow-lg shadow-gray-900 transition-all duration-150 ease-in hover:scale-105">
+                           <!--
+                            <div id="card_pays_principal" 
+                            class="flex col-span-1 row-span-1 justify-center flex-col w-full p-7 rounded-xl cursor-pointer bg-slate-800 shadow-lg shadow-gray-900 transition-all duration-150 ease-in hover:scale-105"
+                            >
                                 <CardBasic
                                 img_url="https://cdn-icons-png.flaticon.com/512/2769/2769569.png"
                                 balance_text={"120000$"}
                                 available_balance_text={"100$"}  
-                                >
-                                </CardBasic>
+                                />
+                               
+                            </div> -->
+                        <div
+                        id="card_pays_principal"
+                        class="flex col-span-1 row-span-1 justify-between flex-col w-full p-6 rounded-xl cursor-pointer bg-slate-800 shadow-lg shadow-gray-900 transition-all duration-150 ease-in"
+                    >
+                        <div
+                            id="contentTarget"
+                            class="flex justify-between mb-1"
+                        >
+                            <img
+                                class="h-14"
+                                src="/ImgStatic/chip.png"
+                                alt="Logo del chip"
+                            />
+                            <img
+                                class="h-12 logo-white"
+                                src="/ImgStatic/logo.png"
+                                alt="Logo de la Página"
+                            />
+                        </div>
+                        <div id="contentTarget" class="flex flex-col gap-2">
+                            <p class="text-lg">4563 2345 8193 7281</p>
+                            <p class="ml-5">06/04/2024</p>
+                        </div>
+                        <div id="contentTarget" class="p-1">
+                            <h2 class="text-xl font-blod text-right">
+                                Sebaxxt
+                            </h2>
+                        </div>
+                        <div id="back" class="">
+                            <div id="line"></div>
+                            <div id="number">
+                                <h2 class="m-auto">8342</h2>
                             </div>
-
+                        </div>
+                    </div>
                             <div id="credit" class="flex col-span-1 justify-around row-span-1 flex-col gap-3 gap-x-5 w-full p-7 rounded-xl cursor-pointer bg-slate-800 shadow-lg shadow-gray-900 transition-all duration-150 ease-in hover:scale-105">
                                 <h1 class="text-white text-lg font-bold">
                                     {"¡Consulte nuestra opción de simulación de crédito!"}
@@ -164,11 +235,77 @@ import CardMovementsArtcile from "./CardMovementsArticle.astro"
             #card_balance{
                 display: none;
             }
-
-            #card_pays{
-                display: none;
+            #back {
+             display: none;
+             flex-direction: column;
             }
+            #back #line {
+            background-color: rgba(101, 131, 233, 0.863);
+             padding: 10px;
+             height: 33px;
+             border-radius: 10px 10px 0 0;
+           }
+             #back #number {
+            display: flex;
+             align-items: center;
+              padding: 40px 0;
+           }
+           #card_pays_principal:hover {
+            padding: 0;
+            animation: rotate 0.5s ease forwards;
+          }
+           #card_pays_principal:hover #back {
+           display: flex;
+            font-size: 30px;
+            font: bold;
+         }
 
+          #card_pays_principal:hover #contentTarget {
+          display: none;
+         }
+           #card_pays{
+            display: none;
+        }
+         #contentTarget{
+        color: white;
+         }
+         .m-auto{
+            color: white;
+         }
+         .logo-white {
+          filter: brightness(0) invert(1); 
+        }
+            @keyframes rotate {
+             0% {
+            transform: rotateY(180deg);
+             }
+             100% {
+            transform: rotateY(0);
+        }
+    }
+
+       @media(max-width 620px;){
+        #contentTarget,
+        #card_pays  {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+    }
+    .h-14,
+    .h-12 {
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+    .text-xl {
+        font-size: 1.5rem;
+    }
+    .text-lg {
+        font-size: 1.2rem;
+    }
+   
+}     
             @media (max-width: 1160px) {
                 #security{
                     grid-column: span 1 / 1 span;
@@ -230,7 +367,8 @@ import CardMovementsArtcile from "./CardMovementsArticle.astro"
             }
 
         </style>
-}
+
+
 
 <style>
     .drop-shadow-lg {
