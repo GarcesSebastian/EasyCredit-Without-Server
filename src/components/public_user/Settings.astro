@@ -1,0 +1,178 @@
+--- 
+
+---
+
+<section class = "mainContainer">
+    <div class="closeConfig"></div>
+    <div class = "menuConfig">
+        <div class="gestionCueta">
+            <button class="btn-gestionar-cuenta">Gestion de Cuenta</button>
+            <div class="subGestionCuenta">
+                <button class="btnSubNotis">Cambiar información de la cuenta</button>
+                <button class="btnSubNotis">Cambiar dirección de e-mail</button>
+                <button class="btnSubNotis">Cambiar contraseña</button>
+                <button class="btnSubNotis">Activar autenticación de Dos factores</button>
+                <button class="btnSubNotis">Eliminar cuenta</button>
+            </div>
+        </div>
+
+        <div class = "preferenciaNotis">
+            <button class="btn-referencias-notificaciones">Preferencias de Notificaciones</button>
+            <div class="subPreferenciaNotis">
+                <button class="btnSubNotis">Recibir notificaciones al e-mail</button>
+                <button class="btnSubNotis">Recibir notificaciones por mensaje</button>
+                <button class="btnSubNotis">Recibir notificaciones en el dispositivo</button>
+            </div>
+        </div>
+
+        <div class="gestionNotis">
+            <button class="btn-gestionar-notificaciones">Gestionar Notificaciones</button>
+            <div class="subGestionNotis">
+                <button class="btnSubNotis">Elegir categoría de las notificaciones a recibir</button>
+                <button class="btnSubNotis">Cambiar color de las notificaciones por su prioridad</button>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const btnConfig =  document.getElementById("btnConfig") as HTMLSpanElement;
+    const menuConfig = document.querySelector('.menuConfig') as HTMLElement;
+    const close = document.querySelector(".closeConfig") as HTMLSpanElement;
+    const mainContainer = document.querySelector('.mainContainer') as HTMLElement;
+
+
+    btnConfig.addEventListener('click', () =>
+    {
+        mainContainer.style.display = window.getComputedStyle(mainContainer).display === "none" ? "flex" : "none";
+    });
+
+    close.addEventListener('click', () =>
+    {
+        mainContainer.style.display = window.getComputedStyle(mainContainer).display === "flex" ? "none" : "flex";
+
+    });
+
+</script>
+
+<style>
+
+    .mainContainer {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index: 9999;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.54);
+    }
+
+    .closeConfig {
+        flex: 0 0 70%;
+        max-width: 70%; 
+        cursor: pointer;
+    }
+
+    .menuConfig {
+        background-color: rgb(30, 41,59);
+        flex: 0 0 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin-left: auto;
+        padding-top: 15px;
+        padding-left: 10px;
+        animation: desplace 0.5s ease forwards;
+        overflow-y: scroll;
+    }
+/*///////////////////////////////////////////////*/
+    .gestionCueta {
+        /* background-color: aqua; */
+        display: flex;
+        height: 40%;
+    }
+/*////////////////////////////////////////////*/
+    .preferenciaNotis {
+        /* background-color: chartreuse; */
+        display: flex;
+        height: 30%;
+
+    }
+/*///////////////////////////////////////////*/
+    .gestionNotis {
+        /* background-color: violet; */
+        display: flex;
+        height: 30%;
+    }
+/*////////////////////////////////////////////*/
+    .gestionCueta,
+    .preferenciaNotis,
+    .gestionNotis {
+        flex-direction: column;
+    }
+
+    .btn-gestionar-cuenta,
+    .btn-gestionar-notificaciones,
+    .btn-referencias-notificaciones {
+        background-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-bottom: 2px solid rgb(72, 104, 155);
+        text-align: start;
+        padding-bottom: 5px;
+    }
+
+    .subGestionCuenta,
+    .subPreferenciaNotis,
+    .subGestionNotis {
+        max-height: 100%;
+        height: 70%;
+        width: 95%;
+        margin:auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btnSubNotis {
+        margin: 8px;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;   
+        text-align: left;
+    }
+
+    .btnSubNotis:last-child {
+        margin-bottom: 1px;
+    }
+
+    @keyframes desplace {
+        0% {
+            transform: translate(100%);
+        }
+        100% {
+            transform: translate(0);
+        }
+    }
+
+    @media (max-width: 1200px){
+        #menuConfig {
+            width: auto;
+            flex: 1;
+        }
+        #close{
+            width: auto;
+            flex: 2;
+        }
+    }
+
+</style>
