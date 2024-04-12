@@ -1,48 +1,67 @@
 ---
 
 ---
-
-<!--Seccion de notificaciones completa con sus funcionalidades -->
-<section id="mainContent">
-  <div id="closeNotifications"></div>
-  <div id="notificationsContent">
-    <article id="notificationsAlmacen">
-      <header class="gap-5">
-        <h1>Notificaciones</h1>
-        <div class="" id="moreOptions">
-          <svg
-            id="menuIcon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-dots"
-            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-              d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
-              d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
-              d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-          </svg>
-        </div>
-      </header>
-
-      <!-- Contenido que se va a ocultar -->
-      <div id="contenedor-submenu">
-        <div id="subMenu" class="hidden">
-          <button id="btnNew">Crear</button>
-          <button id="btnDeleteSingle">Borrar</button>
-          <button id="btnDeleteAll">Borrar todo</button>
-        </div>
+<section
+  class="bg-black/50 fixed top-0 left-0 h-full w-full z-50 hidden"
+  id="mainContent"
+>
+  <div id="closeNotifications" class="w-70 cursor-pointer"></div>
+  <div
+    id="notificationsContent"
+    class="bg-slate-800 shadow-lg shadow-gray-900 w-30 p-5 flex flex-col gap-4"
+  >
+    <header
+      class="flex justify-between items-center p-4 border-b-2 border-blue-500"
+    >
+      <h1 class="text-2xl text-white">Notificaciones</h1>
+      <div id="moreOptions">
+        <svg
+          id="menuIcon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-dots"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
+            d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
+            d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg
+        >
       </div>
+    </header>
 
-      <main class="contentNotifications" id="allNotifications"></main>
-    </article>
+    <!-- Contenido que se va a ocultar -->
+    <div id="subMenu" class="hidden">
+      <button
+        id="btnNew"
+        class="w-full p-3 text-center text-sm text-white cursor-pointer hover:bg-gray-800"
+        >Crear</button
+      >
+      <button
+        id="btnDeleteSingle"
+        class="w-full p-3 text-center text-sm text-white cursor-pointer hover:bg-gray-800"
+        >Borrar</button
+      >
+      <button
+        id="btnDeleteAll"
+        class="w-full p-3 text-center text-sm text-white cursor-pointer hover:bg-gray-800"
+        >Borrar todo</button
+      >
+    </div>
+
+    <main
+      class="overflow-y-scroll h-full flex flex-col gap-4"
+      id="allNotifications"
+    >
+    </main>
   </div>
 </section>
+
 <script>
   //Más opciones
   let menuIcon = document.getElementById("menuIcon") as HTMLElement;
@@ -51,23 +70,28 @@
   // Agregar un event listener para el clic en el ícono del menú
   menuIcon.addEventListener("click", () => {
     // Alternar la clase 'hidden' para mostrar u ocultar los submenús
-    subMenu.classList.toggle("hidden");
+    //subMenu.classList.toggle("hidden");
+    if (subMenu.className == "hidden") {
+      subMenu.className = "flex";
+    } else {
+      subMenu.className = "hidden";
+    }
   });
 
   //la  el btn que tiene la campanita
   let btnNotification = document.querySelector(
-    "#button-notifications"
+    "#button-notifications",
   ) as HTMLSpanElement;
 
   //en contenedor de las notificaciones
   let barNotifications = document.getElementById("mainContent") as HTMLElement;
   let almacenNotifications = document.getElementById(
-    "allNotifications"
+    "allNotifications",
   ) as HTMLElement;
 
   //donde se va a cerrar las notificaciones
   let closeNotifications = document.getElementById(
-    "closeNotifications"
+    "closeNotifications",
   ) as HTMLDivElement;
 
   btnNotification.addEventListener("click", () => {
@@ -100,8 +124,9 @@
 
     article.className =
       "bg-blue-600 shadow-lg flex flex-col gap-1 rounded-lg p-4  transition duration-300 ease-in-out hover:scale-103";
-    h2.className = "text-2xl";
-    p.className = "text-base text-15 ml-2.5 px-2.5 border-l-2 border-blue-300";
+    h2.className = "text-2xl text-white";
+    p.className =
+      "text-white text-base text-15 ml-2.5 px-2.5 border-l-2 border-blue-300";
 
     article.appendChild(h2);
     article.appendChild(p);
@@ -136,190 +161,76 @@
 </script>
 
 <style>
-    /*Sub menú */
-  #subMenu {
-    position: absolute;
-    background-color: rgb(40, 54, 75);
-    padding: 5px 0;
-    border-radius: 4px;
-    right: 20px;
-    animation: despliegueSubmenu 0.3s ease-in-out;
-  }
   @keyframes despliegueSubmenu {
     0% {
       opacity: 0.3;
       transform: translateY(-30px);
     }
     100% {
-      opacity: ;
+      opacity:;
       transform: translateY(0);
     }
   }
-  
-    #subMenu button {
-      display: block;
-      width: 100%;
-      padding: 8px 16px;
-      text-align: left;
-      font-size: 14px;
-      color: #fffbfb;
-      cursor: pointer;
+  /*Sub menú */
+  #subMenu {
+    background-color: rgb(40, 54, 75);
+    padding: 5px 0;
+    border-radius: 4px;
+    animation: despliegueSubmenu 0.3s ease-in-out;
+  }
+ 
+  #allNotifications {
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  #allNotifications::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  #allNotifications::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  #allNotifications::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+  }
+  #allNotifications::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+  }
+  #allNotifications::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  #notificationsContent {
+    animation: desplace 0.5s ease forwards;
+  }
+
+  @keyframes desplace {
+    0% {
+      transform: translate(100%);
     }
-  
-    #subMenu button:hover {
-      background-color: #05050536;
+    100% {
+      transform: translate(0);
     }
-    .notificationArticle {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border-radius: 8px;
-      background-color: rgb(71, 99, 136);
-      transition: all 0.2s ease;
-      box-shadow:
-        rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    }
-  
-    .contentNotifications {
-      overflow-y: scroll;
-      height: 100%;
-    }
-  
-    .contentNotifications::-webkit-scrollbar {
-      width: 16px;
-    }
-  
-    .contentNotifications::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
-  
-    .contentNotifications::-webkit-scrollbar-thumb {
-      background-color: #d6dee1;
-    }
-    .contentNotifications::-webkit-scrollbar-thumb {
-      background-color: #d6dee1;
-      border-radius: 20px;
-    }
-    .contentNotifications::-webkit-scrollbar-thumb {
-      background-color: #d6dee1;
-      border-radius: 20px;
-      border: 6px solid transparent;
-      background-clip: content-box;
-    }
-  
-    #mainContent {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 50;
-      display: none;
-      background-color: rgba(0, 0, 0, 0.534);
+  }
+
+  @media (max-width: 1200px) {
+    #notificationsContent {
+      width: 70%;
     }
     #closeNotifications {
-      width: 70%;
-      cursor: pointer;
-    }
-  
-    #notificationsContent {
-      display: flex;
-      align-items: center;
       width: 30%;
-      height: 100%;
-      padding: 10px;
-      --tw-shadow-color: #0f1f16;
-      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
-        0 4px 6px -4px var(--tw-shadow-color);
-      --tw-shadow: var(--tw-shadow-colored);
-      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-      background-color: rgb(30, 41, 59);
-      color: rgb(255, 255, 255);
-      animation: desplace 0.5s ease forwards;
     }
-  
-    #notificationsContent #notificationsAlmacen {
-      height: 100%;
-      width: 100%;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin: auto;
+  }
+
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 25px;
     }
-  
-    #notificationsContent #notificationsAlmacen header {
-      height: 10%;
-      display: flex;
-      align-items: center;
-      font-size: 35px;
-      padding: 10px;
-      border-bottom: 2px solid rgb(69, 94, 126);
-    }
-  
-    #notificationsContent #notificationsAlmacen main {
-      height: 90%;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      padding: 0 5px;
-    }
-  
-    #notificationsContent #notificationsAlmacen main article {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border-radius: 8px;
-      background-color: rgb(71, 99, 136);
-      transition: all 0.2s ease;
-      box-shadow:
-        rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    }
-  
-    #notificationsContent #notificationsAlmacen main article:hover {
-      transform: scale(1.03);
-      cursor: pointer;
-    }
-  
-    #notificationsContent #notificationsAlmacen main article h2 {
-      font-size: 20px;
-    }
-  
-    #notificationsContent #notificationsAlmacen main article p {
-      font-size: 15px;
-      margin-left: 10px;
-      padding: 0 10px;
-      border-left: 2px solid rgb(119, 168, 232);
-    }
-    @keyframes desplace {
-      0% {
-        transform: translate(100%);
-      }
-      100% {
-        transform: translate(0);
-      }
-    }
-  
-    @media (max-width: 1200px) {
-      #notificationsContent {
-        width: auto;
-        flex: 1;
-      }
-      #closeNotifications {
-        width: auto;
-        flex: 2;
-      }
-    }
-  
-    @media (max-width: 900px) {
-      h1 {
-        font-size: 25px;
-      }
-    }
+  }
 </style>
-  
