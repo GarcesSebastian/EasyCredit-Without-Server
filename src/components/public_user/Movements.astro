@@ -1,0 +1,360 @@
+---
+
+---
+
+<section
+    id="showMore"
+    class="bg-black/50 fixed top-0 left-0 h-full w-full z-50 flex"
+>
+    <article id="close" class="w-[70%] cursor-pointer"></article>
+    <article
+        id="content"
+        class="bg-slate-800 shadow-lg shadow-gray-900 w-[30%] p-5 flex flex-col gap-4"
+    >
+        <header
+            class="flex justify-between items-center p-4 border-b-2 border-blue-500"
+        >
+            <h1 class="text-2xl">Historial de Movimientos</h1>
+            <i id="extras" class="cursor-pointer">
+                <svg
+                    id="menuIcon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-dots"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                    ></path><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                    ></path><path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                    ></path>
+                </svg>
+            </i>
+        </header>
+
+        <main id="contentMovements" class="flex flex-col gap-3">
+            <article
+                id="movement"
+                class="bg-blue-600 shadow-lg flex flex-col rounded-lg"
+            >
+                <div id="preview" class="flex items-center p-5 justify-between">
+                    <div id="logo">
+                        <img
+                            class="size-12"
+                            src="https://img.icons8.com/?size=256&id=eYaVJ9Nbqqbw&format=png"
+                            alt=""
+                        />
+                    </div>
+                    <div id="data" class="text-center">
+                        <h3 class="text-xl">Transferencia</h3>
+                        <i id="date" class="text-sm">20/20/2024</i>
+                    </div>
+                    <div id="count" class="flex">
+                        <p id="countNum" class="font-extrabold text-green-300">
+                            + 1.000.000 $
+                        </p>
+                    </div>
+                    <div id="more" class="cursor-pointer">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
+                            ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                            ></path><path d="M6 9l6 6l6 -6"></path></svg
+                        >
+                    </div>
+                </div>
+                <!-- esto es lo que se va a editar -->
+                <div
+                    id="info"
+                    class="hidden flex-col gap-3 px-5 py-3 text-white border-t-2"
+                >
+                    <h3 class="flex gap-2 text-lg">
+                        De:<p class="font-semibold">Sebxstt</p>
+                    </h3>
+                    <h3 class="flex gap-2 text-lg">
+                        Movimientos:<p class="font-bold text-green-400">
+                            3.000.000 $
+                        </p>
+                    </h3>
+                    <h3 class="flex gap-2 text-lg">
+                        Fecha de Movimientos:<p class="text-blue-200">
+                            13/04/2024
+                        </p>
+                    </h3>
+                    <h3 class="text-lg">
+                        Descripcion:<p
+                            class="bg-slate-700/50 p-3 rounded-sm h-[150px] font-bold border-2 border-dashed"
+                        >
+                            Plata para el cumpleaños
+                        </p>
+                    </h3>
+                    <h3 class="flex gap-2 text-lg font-bold">
+                        Tipo: Transferencia
+                    </h3>
+                </div>
+            </article>
+            <article
+                id="movement"
+                class="bg-blue-600 shadow-lg flex flex-col rounded-lg"
+            >
+                <div id="preview" class="flex items-center p-5 justify-between">
+                    <div id="logo">
+                        <img
+                            class="size-12"
+                            src="https://img.icons8.com/?size=256&id=eYaVJ9Nbqqbw&format=png"
+                            alt=""
+                        />
+                    </div>
+                    <div id="data" class="text-center">
+                        <h3 class="text-xl">Transferencia</h3>
+                        <i id="date" class="text-sm">20/20/2024</i>
+                    </div>
+                    <div id="count" class="flex">
+                        <p id="countNum" class="font-extrabold text-red-300">
+                            -3.000.000 $
+                        </p>
+                    </div>
+                    <div id="more" class="cursor-pointer">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
+                            ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                            ></path><path d="M6 9l6 6l6 -6"></path></svg
+                        >
+                    </div>
+                </div>
+                <!-- esto es lo que se va a editar -->
+                <div
+                    id="info"
+                    class="hidden flex-col gap-3 border-t-2 px-5 py-3 text-white"
+                >
+                    <h3 class="flex gap-2 text-lg">
+                        Para:<p class="font-semibold">Sebxstt</p>
+                    </h3>
+                    <h3 class="flex gap-2 text-lg">
+                        Movimientos:<p class="font-bold text-red-300">
+                            - 3.000.000 $
+                        </p>
+                    </h3>
+                    <h3 class="flex gap-2 text-lg">
+                        Fecha de Movimientos:<p class="text-blue-200">
+                            13/04/2024
+                        </p>
+                    </h3>
+                    <h3 class="text-lg">
+                        Descripcion:<p
+                            class="bg-sky-500/80 p-3 rounded-sm h-[150px] font-bold"
+                        >
+                            Plata para el cumpleaños
+                        </p>
+                    </h3>
+                    <h3 class="flex gap-2 text-lg">Transferencia</h3>
+                </div>
+            </article>
+        </main>
+    </article>
+</section>
+
+<script>
+    let showMovements = document.querySelector(
+        "#showMovements",
+    ) as HTMLButtonElement;
+    let close = document.getElementById("close") as HTMLElement;
+    showMovements.addEventListener("click", () => {
+        let movements = document.querySelector("#showMore") as HTMLElement;
+        if (window.getComputedStyle(movements).display == "none") {
+            movements.style.display = "flex";
+        } else {
+            movements.style.display = "none";
+        }
+    });
+
+    close.addEventListener("click", () => {
+        let movements = document.querySelector("#showMore") as HTMLElement;
+        if (window.getComputedStyle(movements).display == "flex") {
+            movements.style.display = "none";
+        } else {
+            movements.style.display = "flex";
+        }
+    });
+    /*
+    document.querySelectorAll("#contentMovements #movement").forEach((article) => {
+  article.addEventListener("click", () => {
+    // Oculta todos los elementos #info
+    document.querySelectorAll("#contentMovements #movement #info").forEach((info) => {
+      (info as HTMLElement).style.display = "none";
+    });
+    
+    // Muestra el elemento #info dentro del artículo clicado
+    let movementInfo = article.querySelector("#info") as HTMLElement;
+    if (window.getComputedStyle(movementInfo).display == "none") {
+      movementInfo.style.display = "flex";
+    } else {
+      movementInfo.style.display = "none";
+    }
+  });
+});
+**/
+
+    let more = document.getElementById("more") as HTMLDivElement;
+    more.addEventListener("click", () => {
+        let info = document.getElementById("info") as HTMLDivElement;
+        if (window.getComputedStyle(info).display == "none") {
+            info.style.display = "flex";
+        } else {
+            info.style.display = "none";
+        }
+    });
+</script>
+
+<style>
+    #info {
+        animation: more 0.3s ease-out forwards;
+    }
+
+    @keyframes more {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    #contentMovements {
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    #contentMovements::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    #contentMovements::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    #contentMovements::-webkit-scrollbar-thumb {
+        background-color: #d6dee1;
+    }
+    #contentMovements::-webkit-scrollbar-thumb {
+        background-color: #d6dee1;
+        border-radius: 20px;
+    }
+    #contentMovements::-webkit-scrollbar-thumb {
+        background-color: #d6dee1;
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+    }
+
+    #showMore {
+        display: none
+    }
+
+    #content {
+        animation: desplace 0.5s ease forwards;
+    }
+
+    @media (max-width: 1400px) {
+        #close {
+            width: 60%;
+        }
+
+        #content {
+            width: 40%;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        #close {
+            width: 40%;
+        }
+
+        #content {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        #close {
+            width: 40%;
+        }
+
+        #content {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        #close {
+            width: 40%;
+        }
+
+        #content {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 800px) {
+        #close {
+            width: 30%;
+        }
+
+        #content {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        #close {
+            width: 20%;
+        }
+
+        #content {
+            width: 80%;
+            animation: desplace 0.5s ease forwards;
+        }
+
+        #contentMovements #movement #preview {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #contentMovements #movement #info h3 {
+            flex-direction: column;
+            font-size: medium;
+        }
+    }
+
+    @keyframes desplace {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>
