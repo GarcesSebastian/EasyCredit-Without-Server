@@ -1,16 +1,13 @@
 ---
+import AlertCalculating from "./AlertCalculating.astro";
+
 
 ---
 
-<section
-    class="relative top-20 w-screen min-h-full flex flex-col justify-center items-center"
->
-    <article
-        class="w-full flex flex-col justify-center items-center py-5 bg-gradient-to-r to-[#0074D3] from-[#0040A8]"
-    >
-        <div
-            class="w-full h-full gap-x-5 flex flex-col justify-between items-center max-[880px]:flex-col max-w-7xl max-xl:px-5 max-[880px]:justify-center max-[880px]:gap-y-10"
-        >
+<section class="relative top-20 w-screen min-h-full flex flex-col justify-center items-center">
+    <article class="w-full flex flex-col justify-center items-center py-5 bg-gradient-to-r to-[#0074D3] from-[#0040A8]">
+    <AlertCalculating></AlertCalculating>
+        <div class="w-full h-full gap-x-5 flex flex-col justify-between items-center max-[880px]:flex-col max-w-7xl max-xl:px-5 max-[880px]:justify-center max-[880px]:gap-y-10">
             <!--CODE NEW GUI-->
             <div class="simulador-container">
                 <!-- Cuadro para Monto -->
@@ -48,7 +45,7 @@
                 <!-- Cuadro para Tasa de Interés -->
                 <div class="input-box top-right">
                     <label for="interes">Tasa de Interés (%): </label>
-                    <div class="input-with-icon">
+                    <div class="input-with-icon" id="tasa">
                         <input
                             type="number"
                             id="monto"
@@ -171,19 +168,21 @@
         </div>
     </article>
 </section>
-
 <script>
-    let btn_calculate = document.querySelector(
-        ".calculate-btn",
-    ) as HTMLButtonElement;
-    btn_calculate.addEventListener("click", () => {
-        let tabla_amortizacion_dom = document.querySelector(
-            ".Tabla-Amortizacion",
-        ) as HTMLDivElement;
-        if (window.getComputedStyle(tabla_amortizacion_dom).display == "none") {
-            tabla_amortizacion_dom.style.display = "initial";
+    let btn_calculate = document.querySelector(".calculate-btn") as HTMLButtonElement;
+    let tasa = document.querySelector('#tasa') as HTMLInputElement;
+    let tabla_amortizacion_dom = document.querySelector(".Tabla-Amortizacion") as HTMLDivElement;
+    let alert = document.querySelector('#errorCalculating') as HTMLElement;
+
+    btn_calculate.addEventListener("click", () => { 
+        if (!tasa.disabled) {
+            window.getComputedStyle(alert).display == "none" ? alert.style.display = "flex" : alert.style.display = "none"
         } else {
-            tabla_amortizacion_dom.style.display = "none";
+            if (window.getComputedStyle(tabla_amortizacion_dom).display == "none") {
+                tabla_amortizacion_dom.style.display = "initial";
+            } else {
+                tabla_amortizacion_dom.style.display = "none";
+            }
         }
     });
 </script>
