@@ -8,57 +8,54 @@ const {data_id} = Astro.props;
 
 <div class="pb-10 flex-col overflow-y-auto hidden" id="sub_sections_configurations"  data-id={data_id}>
 
+  
   <div class="w-full h-fit border-b border-gray-600 pb-5">
+    <!-- Título -->
     <h1 class="text-white text-2xl font-semibold">Privacy</h1>
 
     <h4 class="text-gray-400 text-lg font-light">
+      <!-- Descripción -->
         Customize your privacy settings to protect your personal data.    
     </h4>
   </div>
 
-  <div class="w-full h-fit border-b border-gray-600 py-7 px-3">
-    <h2 class="text-white text-xl">Public Visibility</h2>
-    <h4 class="text-gray-400 text-base font-light">Control what information is publicly visible on your profile.</h4>
-  
-    <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-5 mt-4">
-        <label class="inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" />
-            <div class="relative w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600"></div>
-            <span class="ms-3 text-base font-semibold text-gray-200">Visibility of name</span>
-          </label>
-        <label class="inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer"/>
-            <div class="relative w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600"></div>
-            <span class="ms-3 text-base font-semibold text-gray-200">Visibility of phone number</span>
-        </label>
-  
-        <label class="inline-flex items-center cursor-pointer">
-             <input type="checkbox" value="" class="sr-only peer" />
-             <div class="relative w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600"></div>
-            <span class="ms-3 text-base font-semibold text-gray-200">Visibility of email</span>
-        </label>
-    </div>
+  <div id="pinPrivacy" class="w-full h-fit border-b border-gray-600 pb-5">
+
+   <h2 class="text-white text-lg font-light mt-5">
+    <!-- Descripción -->
+     Please enter your password to edit privacy settings.
+   </h2>
+
+    <!-- Digitar contraseña para editar -->
+    <form class="mt-4">
+      <div class="mb-4">
+        <label for="password" class="text-gray-200">Password</label>
+        <input type="password" id="password" name="password" class="flex ml-0.5 bg-gray-700 text-gray-200 py-2 px-3 rounded-sm w-[50%] outline-none" required>
+      </div>
+      <button type="button" id="buttonSubmit" class="bg-gradient-to-r to-[#0074D3] from-[#0040A8] hover:opacity-80 text-white px-4 py-3 rounded ">Submit</button>
+    </form>
   </div>
-  
 
   <div class="w-full h-fit border-b border-gray-600 py-7 px-3">
+    <!-- SUbtítulo -->
     <h2 class="text-white text-xl">Explicit consent</h2>
 
     <h4 class="text-gray-400 text-base font-light">
+      <!-- Descripción -->
         Please make sure you consent to the use and sharing of your personal data.
     </h4>
 
     <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-5 mt-4">
-
       <label class="inline-flex items-center cursor-pointer">
-        <input type="checkbox" value="" class="sr-only peer" />
+
+        <input type="checkbox" id="" class="sr-only peer" disabled />
         <div class="relative w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600">
         </div>
         <span class="ms-3 text-base font-semibold text-gray-200">Consent for data use</span>
       </label>
 
       <label class="inline-flex items-center cursor-pointer">
-        <input type="checkbox" value="" class="sr-only peer" />
+        <input type="checkbox" value="" class="sr-only peer" disabled/>
         <div class="relative w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600">
         </div>
         <span class="ms-3 text-base font-semibold text-gray-200">Consent to share data</span>
@@ -67,26 +64,85 @@ const {data_id} = Astro.props;
   </div>
 
   <div class="w-full h-fit border-b border-gray-600 py-7 px-3">
+    <!-- Subtítulo -->
     <h2 class="text-white text-xl">Password</h2>
+
+    <!-- Descripción -->
     <h4 class="text-gray-400 text-base font-light">Change your current password to a new one to keep your account secure.</h4>
   
+    <!-- Formulario para cambiar la contraseña -->
     <form class= "mt-4">
       <div class="mb-4">
         <label for="current-password" class=" text-gray-200">Current password</label>
-        <input type="password" id="current-password" name="current-password" class="flex bg-gray-700 text-gray-200 py-2 px-3 rounded-sm w-[50%]" required>
+        <input type="password" id="current-password" name="current-password" class="flex outline-none bg-gray-700 text-gray-200 py-2 px-3 rounded-sm w-[50%]" required disabled>
       </div>
   
       <div class="mb-4">
         <label for="new-password" class="text-gray-200">New password</label>
-        <input type="password" id="new-password" name="new-password" class="flex bg-gray-700 text-gray-200 py-2 px-3 rounded-sm w-[50%]" required>
+        <input type="password" id="new-password" name="new-password" class="flex outline-none bg-gray-700 text-gray-200 py-2 px-3 rounded-sm w-[50%]" required disabled>
       </div>
   
       <div class="mb-8">
         <label for="confirm-password" class=" text-gray-200">Confirm new password</label>
-        <input type="password" id="confirm-password" name="confirm-password" class="flex bg-gray-700 text-gray-200 py-2 px-3 rounded-sm w-[50%]" required>
+        <input type="password" id="confirm-password" name="confirm-password" class="flex outline-none bg-gray-700 text-gray-200 py-2 px-3 rounded-sm w-[50%]" required disabled>
       </div>
   
-      <button type="submit" class="bg-gradient-to-r to-[#0074D3] from-[#0040A8] hover:opacity-80 text-white px-4 py-3 rounded ">Change password</button>
+      <button type="submit" id="buttonChangePassword" class="bg-gradient-to-r to-[#0074D3] from-[#0040A8] hover:opacity-80 text-white px-4 py-3 rounded " disabled>Change password</button>
     </form>
   </div>
-</div>
+
+  <div class="w-full h-fit border-b border-gray-600 py-7 px-3">
+    <!-- Subtítulo -->
+    <h2 class="text-white text-xl">Account Activity Log</h2>
+  
+    <h4 class="text-gray-400 text-base font-light">
+      <!-- Descripción -->
+      Enable an account activity log that details user actions and changes to privacy settings, providing information into how your account is used.    </h4>
+    
+    <label class="inline-flex items-center cursor-pointer mt-4">
+      <input type="checkbox" id="activityLogCheckbox" class="sr-only peer" disabled/>
+      <div class="relative w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600"></div>
+      <span class="ms-3 text-base font-semibold text-gray-200">Enable Account Activity Log</span>
+    </label>
+  </div>
+
+  </div>
+
+<script>
+  let getPassword = document.getElementById('password') as HTMLInputElement;
+  let btn_submit = document.getElementById('buttonSubmit') as HTMLButtonElement;
+  let inputsCheckbox = document.querySelectorAll('input[type="checkbox"]') as NodeListOf<HTMLInputElement>;
+  let inputsPasswords = document.querySelectorAll('input[type="password"]') as NodeListOf<HTMLInputElement>;
+  let btn_change_password = document.getElementById('buttonChangePassword') as HTMLButtonElement;
+
+  // Contraseña de prueba
+  let password = "1234";
+
+  btn_submit.addEventListener('click', () => {
+    if (getPassword.value === password) {
+      let content_pin_privacy = document.getElementById('pinPrivacy') as HTMLLIElement;
+
+      content_pin_privacy.style.display = 'none';
+      content_pin_privacy.classList.add('animate-deployment');
+
+
+      // Reccorrer este ciclo para almacenar los checbox en una variable
+      inputsCheckbox.forEach(checkbox =>{
+        checkbox.removeAttribute('disabled');  // Removerle el disabled a los checkbox
+      })
+
+      //Recorrer este ciclo para almacenar los inputs tipo password en una variable
+      inputsPasswords.forEach(password => {
+        password.removeAttribute('disabled'); //Removerle el disabled a los inputs
+      })
+
+      btn_change_password.removeAttribute('disabled');
+
+      getPassword.classList.add('border-green-500', 'border', 'border-solid');
+      
+    } else {
+      getPassword.classList.add('border-red-500', 'border', 'border-solid'); 
+    }
+  });
+</script>
+
